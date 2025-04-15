@@ -1,0 +1,14 @@
+“cd C:\Program Files\Oracle\VirtualBox“
+“VBoxManage modifyvm “ubu” –nested—hw-virt on”
+
+egrep -c ‘(vm|svm)’ /proc/cpuinfo 
+kvm-ok 
+sudo apt-get install -y qemu-kvm virt-manager
+
+sudo systemctl enable --now libvirtd
+sudo systemctl start --now libvirtd
+sudo systemctl status --now libvirtd
+
+sudo usermod -aG kvm $USER
+sudo usermod -aG libvirt $USER
+

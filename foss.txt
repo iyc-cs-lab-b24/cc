@@ -1,0 +1,1 @@
+fc-node-configuration -n demo-system -password admin
